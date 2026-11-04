@@ -14,14 +14,14 @@ npm start
 
 | Path | Branch | Version | Port |
 |------|--------|---------|------|
-| `../cursor-training-v1` | `deploy/v1` | `v1.0.0` | 3001 |
-| `../cursor-training-v2` | `deploy/v2` | `v2.0.0` | 3002 |
-| `../cursor-training-v3` | `deploy/v3` | `v3.0.0` | 3003 |
-| `../cursor-training-v4` | `deploy/v4` | `v4.0.0` | 3004 |
-| `../cursor-training-v5` | `deploy/v5` | `v5.0.0` | 3005 |
+| `../cursor-training-v1` | `deploy/v1` | `v1.0.0` | 3101 |
+| `../cursor-training-v2` | `deploy/v2` | `v2.0.0` | 3102 |
+| `../cursor-training-v3` | `deploy/v3` | `v3.0.0` | 3103 |
+| `../cursor-training-v4` | `deploy/v4` | `v4.0.0` | 3104 |
+| `../cursor-training-v5` | `deploy/v5` | `v5.0.0` | 3105 |
 
 ```bash
-curl -s http://127.0.0.1:3001/   # → "version": "v1.0.0"
+curl -s http://127.0.0.1:3101/   # → "version": "v1.0.0"
 ```
 
 Config lives in each worktree’s `deploy.json` (`version` + `port`). See **[DEMO.md](./DEMO.md)** for stop / remove commands.
