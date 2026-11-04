@@ -1,35 +1,27 @@
-# Cursor Training · git worktree demo
+# Cursor Training · worktree deploy demo
 
-A tiny Node app that shows **which git checkout** you're in (branch + path). Use it to feel how worktrees give you two (or more) working directories for one repo.
+One git repo, many worktrees — each **version** serves HTTP on its **own port**.
 
-## Layout
-
-```
-~/Desktop/cursor_projects/
-├── cursor-training/              ← main worktree (branch: main)
-└── cursor-training-feature/      ← linked worktree (branch: feature/label-change)
-```
-
-Both folders share one `.git` history. You can open each folder in Cursor as its own window.
-
-## Run
+## Quick start (main template)
 
 ```bash
 cd ~/Desktop/cursor_projects/cursor-training
 npm start
-
-cd ~/Desktop/cursor_projects/cursor-training-feature
-npm start
+# → http://127.0.0.1:3000/  (v0.0.0-main)
 ```
 
-Each run prints `label`, `branch`, and absolute `root`.
+## Five deployments
 
-## Worktrees in 30 seconds
+| Path | Branch | Version | Port |
+|------|--------|---------|------|
+| `../cursor-training-v1` | `deploy/v1` | `v1.0.0` | 3001 |
+| `../cursor-training-v2` | `deploy/v2` | `v2.0.0` | 3002 |
+| `../cursor-training-v3` | `deploy/v3` | `v3.0.0` | 3003 |
+| `../cursor-training-v4` | `deploy/v4` | `v4.0.0` | 3004 |
+| `../cursor-training-v5` | `deploy/v5` | `v5.0.0` | 3005 |
 
-| Command | What it does |
-|--------|----------------|
-| `git worktree list` | Show all checkouts for this repo |
-| `git worktree add ../cursor-training-feature -b feature/label-change` | New folder + new branch |
-| `git worktree remove ../cursor-training-feature` | Delete the linked checkout (after you're done) |
+```bash
+curl -s http://127.0.0.1:3001/   # → "version": "v1.0.0"
+```
 
-See **[DEMO.md](./DEMO.md)** for the full recreate / cleanup recipe.
+Config lives in each worktree’s `deploy.json` (`version` + `port`). See **[DEMO.md](./DEMO.md)** for stop / remove commands.
